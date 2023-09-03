@@ -1,8 +1,8 @@
 ---
-title: Linux_Structure
+title: Linux Structure
 description: 
 published: true
-date: 2023-09-03T10:49:15.000Z
+date: 2023-09-03T10:49:47.883Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-03T10:43:20.337Z
