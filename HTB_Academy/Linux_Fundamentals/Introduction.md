@@ -2,7 +2,7 @@
 title: Linux_Structure
 description: 
 published: true
-date: 2023-09-03T10:43:20.337Z
+date: 2023-09-03T10:49:15.000Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-03T10:43:20.337Z
