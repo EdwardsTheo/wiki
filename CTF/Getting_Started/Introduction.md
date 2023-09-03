@@ -1,3 +1,13 @@
+---
+title: Introduction
+description: 
+published: true
+date: 2023-09-03T15:38:30.640Z
+tags: 
+editor: markdown
+dateCreated: 2023-09-03T14:46:47.009Z
+---
+
 # Infosec Overview
 
 
@@ -21,7 +31,9 @@ Data can be electronic or physical and tangible (e.g., design blueprints) or int
 
 Data protection must focus on efficient yet effective policy implementation without negatively affecting an organization's business operations and productivity. To achieve this, organizations must follow a process called the `risk management process`. This process involves the following five steps:
 
-![[Pasted image 20221210200017.png]]
+![Pasted image 20230112205720.png](/Images/Pasted image 20221210200017.png)
+
+![Pasted image 20220905162254.png](/Images/Pasted image 20220905162254.png)
 
 As mentioned previously, the core tenet of infosec is information assurance, or maintaining the `CIA` of data and making sure that it is not compromised in any way, shape, or form when an incident occurs. An incident could be a natural disaster, system malfunction, or security incident.
 
