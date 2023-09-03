@@ -1,14 +1,6 @@
----
-title: Nmap
-description: 
-published: true
-date: 2023-09-03T10:57:13.109Z
-tags: 
-editor: markdown
-dateCreated: 2023-09-03T10:57:13.109Z
----
-
 ## Scanning Options
+
+  
 
 | **Nmap Option** | **Description** |
 |---|----|
@@ -20,7 +12,7 @@ dateCreated: 2023-09-03T10:57:13.109Z
 | `--packet-trace` | Shows all packets sent and received. |
 | `--reason` | Displays the reason for a specific result. |
 | `--disable-arp-ping` | Disables ARP Ping Requests. |
-| `--top-ports=<num>` | Scans the specified top ports that have been defined as most frequent.  |
+| `--top-ports=<num>` | Scans the specified top ports that have been defined as most frequent.  |
 | `-p-` | Scan all ports. |
 | `-p22-110` | Scan all ports between 22 and 110. |
 | `-p22,25` | Scans only the specified ports 22 and 25. |
