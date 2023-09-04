@@ -7,6 +7,7 @@ It is essential to understand how the tool we use works and how it performs and 
 
 There are a total of 6 different states for a scanned port we can obtain:
 
+![Pasted-image-20221219151956.png](/Images/Pasted-image-20221219151956.png)
 ![[Pasted image 20221219152510.png]]
 
 ## Discovering Open TCP Ports
@@ -15,24 +16,30 @@ By default, `Nmap` scans the top 1000 TCP ports with the SYN scan (`-sS`). This 
 
 #### Scanning Top 10 TCP Ports
 
+![Pasted-image-20221219151956.png](/Images/Pasted-image-20221219151956.png)
 ![[Pasted image 20221219152534.png]]
 
+![Pasted-image-20221219151956.png](/Images/Pasted-image-20221219151956.png)
 ![[Pasted image 20221219152552.png]]
 
 We see that we only scanned the top 10 TCP ports of our target, and `Nmap` displays their state accordingly. If we trace the packets `Nmap` sends, we will see the `RST` flag on `TCP port 21` that our target sends back to us. To have a clear view of the SYN scan, we disable the ICMP echo requests (`-Pn`), DNS resolution (`-n`), and ARP ping scan (`--disable-arp-ping`).
 
 #### Nmap - Trace the Packets
 
+![Pasted-image-20221219151956.png](/Images/Pasted-image-20221219151956.png)
 ![[Pasted image 20221219152610.png]]
+![Pasted-image-20221219151956.png](/Images/Pasted-image-20221219151956.png)
 ![[Pasted image 20221219152622.png]]
 We can see from the SENT line that we (`10.10.14.2`) sent a TCP packet with the `SYN` flag (`S`) to our target (`10.129.2.28`). In the next RCVD line, we can see that the target responds with a TCP packet containing the `RST` and `ACK` flags (`RA`). `RST` and `ACK` flags are used to acknowledge receipt of the TCP packet (`ACK`) and to end the TCP session (`RST`).
 
 #### Request
 
+![Pasted-image-20221219151956.png](/Images/Pasted-image-20221219151956.png)
 ![[Pasted image 20221219152639.png]]
 
 #### Response
 
+![Pasted-image-20221219151956.png](/Images/Pasted-image-20221219151956.png)
 ![[Pasted image 20221219152653.png]]
 
 ## Filtered Ports
@@ -57,6 +64,7 @@ MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
 Nmap done: 1 IP address (1 host up) scanned in 2.06 seconds
 ```
 
+![Pasted-image-20221219151956.png](/Images/Pasted-image-20221219151956.png)
 ![[Pasted image 20221219153137.png]]
 
 We see in the last scan that `Nmap` sent two TCP packets with the SYN flag. By the duration (`2.06s`) of the scan, we can recognize that it took much longer than the previous ones (`~0.05s`). The case is different if the firewall rejects the packets. For this, we look at TCP port `445`, which is handled accordingly by such a rule of the firewall.
@@ -77,7 +85,7 @@ MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
 Nmap done: 1 IP address (1 host up) scanned in 0.05 seconds
 ```
 
-![[Pasted image 20221219152730.png]]
+![Pasted-image-20221219152730.png](/Images/Pasted-image-20221219152730.png)
 
 As a response, we receive an `ICMP` reply with `type 3` and `error code 3`, which indicates that the desired host is unreachable. Nevertheless, if we know that the host is alive, we can strongly assume that the firewall on this port is rejecting the packets, and we will have to take a closer look at this port later.
 
@@ -105,7 +113,7 @@ MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
 Nmap done: 1 IP address (1 host up) scanned in 98.07 seconds
 ```
 
-![[Pasted image 20221219153104.png]]
+![Pasted-image-20221219153104.png](/Images/Pasted-image-20221219153104.png)
 
 Another disadvantage of this is that we often do not get a response back because `Nmap` sends empty datagrams to the scanned UDP ports, and we do not receive any response. So we cannot determine if the UDP packet has arrived at all or not. If the UDP port is `open`, we only get a response if the application is configured to do so.
 
@@ -125,7 +133,7 @@ MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
 Nmap done: 1 IP address (1 host up) scanned in 0.04 seconds
 ```
 
-![[Pasted image 20221219152948.png]]
+![Pasted-image-20221219152948.png](/Images/Pasted-image-20221219152948.png)
 
 If we get an ICMP response with `error code 3` (port unreachable), we know that the port is indeed `closed`.
 
@@ -145,7 +153,7 @@ MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
 Nmap done: 1 IP address (1 host up) scanned in  0.15 seconds
 ```
 
-![[Pasted image 20221219153015.png]]
+![Pasted-image-20221219153015.png](/Images/Pasted-image-20221219153015.png)
 
 ---
 
@@ -167,7 +175,7 @@ MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
 Nmap done: 1 IP address (1 host up) scanned in 2.06 seconds
 ```
 
-![[Pasted image 20221219153216.png]]
+![Pasted-image-20221219153216.png](/Images/Pasted-image-20221219153216.png)
 
 Another handy method for scanning ports is the `-sV` option which is used to get additional available information from the open ports. This method can identify versions, service names, and details about our target.
 
@@ -201,6 +209,6 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 6.55 seconds
 ```
 
-![[Pasted image 20221219153233.png]]
+![Pasted-image-20221219153233.png](/Images/Pasted-image-20221219153233.png)
 
 More information about port scanning techniques we can find at: [https://nmap.org/book/man-port-scanning-techniques.html](https://nmap.org/book/man-port-scanning-techniques.html)

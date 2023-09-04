@@ -19,7 +19,7 @@ Stats: 0:00:03 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
 SYN Stealth Scan Timing: About 3.64% done; ETC: 19:45 (0:00:53 remaining)
 ```
 
-![[Pasted image 20221219160133.png]]
+![Pasted-image-20221219160133.png](/Images/Pasted-image-20221219160133.png)
 
 Another option (`--stats-every=5s`) that we can use is defining how periods of time the status should be shown. Here we can specify the number of seconds (`s`) or minutes (`m`), after which we want to get the status.
 
@@ -33,7 +33,7 @@ Stats: 0:00:10 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
 SYN Stealth Scan Timing: About 39.57% done; ETC: 19:48 (0:00:15 remaining)
 ```
 
-![[Pasted image 20221219160151.png]]
+![Pasted-image-20221219160151.png](/Images/Pasted-image-20221219160151.png)
 
 We can also increase the `verbosity level` (`-v` / `-vv`), which will show us the open ports directly when `Nmap` detects them.
 
@@ -59,7 +59,7 @@ Discovered open port 22/tcp on 10.129.2.28
 <SNIP>
 ```
 
-![[Pasted image 20221219160209.png]]
+![Pasted-image-20221219160209.png](/Images/Pasted-image-20221219160209.png)
 
 ## Banner Grabbing
 
@@ -89,7 +89,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 91.73 seconds
 ```
 
-![[Pasted image 20221219160231.png]]
+![Pasted-image-20221219160231.png](/Images/Pasted-image-20221219160231.png)
 
 Primarily, `Nmap` looks at the banners of the scanned ports and prints them out. If it cannot identify versions through the banners, `Nmap` attempts to identify them through a signature-based matching system, but this significantly increases the scan's duration. One disadvantage to `Nmap`'s presented results is that the automatic scan can miss some information because sometimes `Nmap` does not know how to handle it. Let us look at an example of this.
 
@@ -113,7 +113,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 0.47 seconds
 ```
 
-![[Pasted image 20221219160249.png]]
+![Pasted-image-20221219160249.png](/Images/Pasted-image-20221219160249.png)
 
 If we look at the results from `Nmap`, we can see the port's status, service name, and hostname. Nevertheless, let us look at this line here:
 
@@ -151,12 +151,12 @@ Connection to 10.129.2.28 port 25 [tcp/*] succeeded!
 
 The first three lines show us the three-way handshake.
 
-![[Pasted image 20221219160331.png]]
+![Pasted-image-20221219160331.png](/Images/Pasted-image-20221219160331.png)
 
 After that, the target SMTP server sends us a TCP packet with the `PSH` and `ACK` flags, where `PSH` states that the target server is sending data to us and with `ACK` simultaneously informs us that all required data has been sent.
 
-![[Pasted image 20221219160349.png]]
+![Pasted-image-20221219160349.png](/Images/Pasted-image-20221219160349.png)
 
 The last TCP packet that we sent confirms the receipt of the data with an `ACK`.
 
-![[Pasted image 20221219160400.png]]
+![Pasted-image-20221219160400.png](/Images/Pasted-image-20221219160400.png)

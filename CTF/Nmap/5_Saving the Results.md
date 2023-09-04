@@ -24,7 +24,7 @@ MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
 Nmap done: 1 IP address (1 host up) scanned in 10.22 seconds
 ```
 
-![[Pasted image 20221219155200.png]]
+![Pasted-image-20221219155200.png](/Images/Pasted-image-20221219155200.png)
 
 If no full path is given, the results will be stored in the directory we are currently in. Next, we look at the different formats `Nmap` has created for us.
 
@@ -105,6 +105,6 @@ ChefBaki@htb[/htb]$ xsltproc target.xml -o target.html
 
 If we now open the HTML file in our browser, we see a clear and structured presentation of our results.
 
-![[Pasted image 20221219155351.png]]
+![Pasted-image-20221219155351.png](/Images/Pasted-image-20221219155351.png)
 
 More information about the output formats can be found at: [https://nmap.org/book/output.html](https://nmap.org/book/output.html)
